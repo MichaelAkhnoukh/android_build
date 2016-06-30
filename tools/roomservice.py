@@ -41,11 +41,11 @@ default_rem = "omnirom"
 default_rev = "android-6.0"
 # set this to the remote that you use for projects from your team repos
 # example fetch="https://github.com/omnirom"
-default_team_rem = "omnirom"
+default_team_rem = "MichaelAkhnoukh"
 # this shouldn't change unless google makes changes
 local_manifest_dir = ".repo/local_manifests"
 # change this to your name on github (or equivalent hosting)
-android_team = "omnirom"
+android_team = "MichaelAkhnoukh"
 # url to gerrit repository
 gerrit_url = "gerrit.omnirom.org"
 
