@@ -36,7 +36,7 @@ except:
     device = product
 
 if not depsonly:
-    print "Device %s not found. Attempting to retrieve device repository from MA Github (http://github.com/MichaelAkhnoukh)." % device
+    print "Device %s not found. Attempting to retrieve device repository from MichaelAkhnoukh Github (http://github.com/MichaelAkhnoukh)." % device
 
 repositories = []
 
@@ -139,7 +139,7 @@ def add_to_manifest_dependencies(repositories):
                 print 'Updating dependency %s' % (repo_name)
                 existing_project.set('name', repository['repository'])
             if existing_project.attrib['revision'] == repository['branch']:
-                print 'MA/%s already exists' % (repo_name)
+                print 'MichaelAkhnoukh/%s already exists' % (repo_name)
             else:
                 print 'updating branch for %s to %s' % (repo_name, repository['branch'])
                 existing_project.set('revision', repository['branch'])
@@ -175,15 +175,15 @@ def add_to_manifest(repositories):
         existing_project = exists_in_tree_device(lm, repo_name)
         if existing_project != None:
             if existing_project.attrib['revision'] == repository['branch']:
-                print 'MA/%s already exists' % (repo_name)
+                print 'MichaelAkhnoukh/%s already exists' % (repo_name)
             else:
-                print 'updating branch for MA/%s to %s' % (repo_name, repository['branch'])
+                print 'updating branch for MichaelAkhnoukh/%s to %s' % (repo_name, repository['branch'])
                 existing_project.set('revision', repository['branch'])
             continue
 
-        print 'Adding dependency: MA/%s -> %s' % (repo_name, repo_target)
+        print 'Adding dependency: MichaelAkhnoukh/%s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": "MA/%s" % repo_name, "revision": "n7x" })
+            "remote": "github", "name": "MichaelAkhnoukh/%s" % repo_name, "revision": "n7x" })
 
         if 'branch' in repository:
             project.set('revision', repository['branch'])
